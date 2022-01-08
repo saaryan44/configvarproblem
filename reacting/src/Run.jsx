@@ -1,0 +1,4 @@
+import {useState,useEffect} from 'react';
+const Run=()=>{const [po,P]=useState("");useEffect(()=>{alert("hello, fill the form. Should store and return a message."); document.title="hello config vars";},[]);return(<form onSubmit={f=>{f.preventDefault(); fetch('/',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({hi:po})}).then(f=>f.json()).then(g=>{if(g.ok){alert(g.message);}else{alert('oh no!');}}).catch(d=>alert('promising error...'));}}><input type='text' placeholder='something to say..' name='hi' value={po} onChange={f=>{P(f.target.value);}}/><input type="submit" /></form>);};
+
+export default Run;
